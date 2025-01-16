@@ -11,5 +11,20 @@ namespace Winform_To_do
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
