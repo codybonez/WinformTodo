@@ -26,5 +26,20 @@ namespace Winform_To_do
         {
 
         }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+           
+            // Where we handle the add event (Event handler)
+            Todo myToDo = new Todo (txtTaskDescription.Text, DateTime.Parse(txtDueDate.Text));
+
+            MessageBox.Show(myToDo.ToString());
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

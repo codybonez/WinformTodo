@@ -15,7 +15,7 @@ namespace Winform_To_do
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
-        public Todo(string Description, DateTime date, bool donestate)
+        public Todo(string Description, DateTime date, bool donestate = false)
         {
             ObjectCounter++;
             Id = ObjectCounter;
@@ -24,6 +24,9 @@ namespace Winform_To_do
             IsDone = donestate;
         }
 
-
+        public override string? ToString()
+        {
+            return $"{Id} - {DueDate} - {TaskDescription} ";
+        }
     }
 }
