@@ -59,11 +59,11 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(311, 77);
+            btnClear.Location = new Point(278, 77);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(57, 23);
+            btnClear.Size = new Size(90, 23);
             btnClear.TabIndex = 6;
-            btnClear.Text = "Clear";
+            btnClear.Text = "Clear All";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
@@ -99,7 +99,7 @@
             lblTaskBoxLabel.AutoSize = true;
             lblTaskBoxLabel.Location = new Point(23, 19);
             lblTaskBoxLabel.Name = "lblTaskBoxLabel";
-            lblTaskBoxLabel.Size = new Size(29, 15);
+            lblTaskBoxLabel.Size = new Size(30, 15);
             lblTaskBoxLabel.TabIndex = 1;
             lblTaskBoxLabel.Text = "Task";
             // 
