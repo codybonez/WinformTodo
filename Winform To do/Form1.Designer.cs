@@ -122,6 +122,7 @@
             // 
             // lvTasks
             // 
+            lvTasks.CheckBoxes = true;
             lvTasks.Location = new Point(0, 22);
             lvTasks.Name = "lvTasks";
             lvTasks.Size = new Size(469, 672);
