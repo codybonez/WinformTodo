@@ -36,7 +36,7 @@
             lblTaskBoxLabel = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lvTasks = new ListView();
+            lbTaskList = new ListBox();
             groupBox1.SuspendLayout();
             gbTaskList.SuspendLayout();
             SuspendLayout();
@@ -66,6 +66,7 @@
             btnClear.Text = "Clear Form";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            btnClear.KeyPress += Form1_KeyPress;
             // 
             // BtnAdd
             // 
@@ -75,7 +76,7 @@
             BtnAdd.TabIndex = 5;
             BtnAdd.Text = "Add To Do";
             BtnAdd.UseVisualStyleBackColor = true;
-            BtnAdd.Click += BtnAdd_Click;
+            BtnAdd.Click += SubmitForm;
             // 
             // lblDueDate
             // 
@@ -93,13 +94,14 @@
             txtDueDate.PlaceholderText = "2025-01-20";
             txtDueDate.Size = new Size(409, 23);
             txtDueDate.TabIndex = 2;
+            txtDueDate.KeyPress += Form1_KeyPress;
             // 
             // lblTaskBoxLabel
             // 
             lblTaskBoxLabel.AutoSize = true;
             lblTaskBoxLabel.Location = new Point(23, 19);
             lblTaskBoxLabel.Name = "lblTaskBoxLabel";
-            lblTaskBoxLabel.Size = new Size(30, 15);
+            lblTaskBoxLabel.Size = new Size(29, 15);
             lblTaskBoxLabel.TabIndex = 1;
             lblTaskBoxLabel.Text = "Task";
             // 
@@ -109,10 +111,11 @@
             txtTaskDescription.Name = "txtTaskDescription";
             txtTaskDescription.Size = new Size(409, 23);
             txtTaskDescription.TabIndex = 0;
+            txtTaskDescription.KeyPress += Form1_KeyPress;
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lvTasks);
+            gbTaskList.Controls.Add(lbTaskList);
             gbTaskList.Location = new Point(12, 130);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Size = new Size(469, 694);
@@ -120,16 +123,13 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lvTasks
+            // lbTaskList
             // 
-            lvTasks.CheckBoxes = true;
-            lvTasks.Location = new Point(0, 22);
-            lvTasks.Name = "lvTasks";
-            lvTasks.Size = new Size(469, 672);
-            lvTasks.TabIndex = 0;
-            lvTasks.UseCompatibleStateImageBehavior = false;
-            lvTasks.View = View.List;
-            lvTasks.SelectedIndexChanged += lvTasks_SelectedIndexChanged;
+            lbTaskList.FormattingEnabled = true;
+            lbTaskList.Location = new Point(6, 22);
+            lbTaskList.Name = "lbTaskList";
+            lbTaskList.Size = new Size(457, 664);
+            lbTaskList.TabIndex = 0;
             // 
             // Form1
             // 
@@ -156,6 +156,6 @@
         private Button btnClear;
         private Button BtnAdd;
         private GroupBox gbTaskList;
-        private ListView lvTasks;
+        private ListBox lbTaskList;
     }
 }
