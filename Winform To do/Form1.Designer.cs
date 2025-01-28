@@ -63,7 +63,7 @@
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(90, 23);
             btnClear.TabIndex = 6;
-            btnClear.Text = "Clear All";
+            btnClear.Text = "Clear Form";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
@@ -128,6 +128,7 @@
             lvTasks.Size = new Size(469, 672);
             lvTasks.TabIndex = 0;
             lvTasks.UseCompatibleStateImageBehavior = false;
+            lvTasks.View = View.List;
             lvTasks.SelectedIndexChanged += lvTasks_SelectedIndexChanged;
             // 
             // Form1

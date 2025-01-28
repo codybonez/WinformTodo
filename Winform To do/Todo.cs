@@ -29,4 +29,8 @@ namespace Winform_To_do
             return $"{Id} - {DueDate} - {TaskDescription} ";
         }
     }
+    // TODO: Make sure that the task list is sorted by date time,
+
+    // TODO: clears the whole data of the list 
+    // TODO: 
 }
