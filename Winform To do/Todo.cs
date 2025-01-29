@@ -15,6 +15,22 @@ namespace Winform_To_do
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
+
+        public string GetStatus() {
+            string Status = "";
+
+            if (IsDone)
+            {
+
+                Status = "Status: Complete";
+            }
+            else {
+                Status = "Status: InComplete";
+            }
+
+
+            return Status;        
+        }
         public Todo(string Description, DateTime date, bool donestate = false)
         {
             ObjectCounter++;
@@ -26,7 +42,7 @@ namespace Winform_To_do
 
         public override string? ToString()
         {
-            return $"{Id} - {DueDate} - {TaskDescription} ";
+            return $"{Id} - {DueDate} - {TaskDescription} - {GetStatus()}";
         }
     }
     // TODO: Make sure that the task list is sorted by date time,

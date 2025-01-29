@@ -2,9 +2,12 @@ namespace Winform_To_do
 {
     public partial class Form1 : Form
     {
+        private List<Todo> TaskList { get; set; }
+           
         public Form1()
         {
             InitializeComponent();
+            TaskList = new List<Todo>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,7 +32,7 @@ namespace Winform_To_do
         {
 
         }
-        List<Todo> list = new List<Todo>();
+        
 
 
         private void ClearTask()
@@ -53,7 +56,7 @@ namespace Winform_To_do
 
                 return;
             }
-            if (Validators.IsValidDate(txtDueDate)) {
+            if (!Validators.IsValidDate(txtDueDate)) {
                 MessageBox.Show("Missing a due date.");
                 return;
             }
@@ -82,9 +85,47 @@ namespace Winform_To_do
 
 
             // adds the list to the listview
-            lbTaskList.Items.Add(myToDo.ToString());
+            
+            TaskList.Add(myToDo);
+
+
+            UpdateListBox();
+
             MessageBox.Show(myToDo.ToString());
             ClearTask();
+
+        }
+
+        public void UpdateListBox()
+        {
+            // clear the contents
+            lbTaskList.Items.Clear();
+
+            //transform the list 
+            var list = TaskList
+                .Where(t => t.IsDone == false)
+                .OrderBy(t => t.DueDate)
+                .ToList();
+
+
+            
+            // read in the new contents
+
+
+
+
+
+
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                lbTaskList.Items.Add(list[i].ToString());
+            }
+            // clean up if required
+
+
+
+
 
         }
 
